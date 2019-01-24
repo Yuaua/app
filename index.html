@@ -48,7 +48,7 @@
 
 <div style="font-weight:bold;padding:25px 0 0 0;width:100%;overflow: hidden;bottom:0px;color:white">
 下载一句APP探索更多
-<a style="text-decoration:none;font-weight:bold;color:#55AAFF" href="https://www.coolapk.com/apk/small.word">点击下载</a>
+<a onclick="down()" style="text-decoration:none;font-weight:bold;color:#55AAFF" href="YiJu_APP.apk" download="一句APP.apk">点击下载</a>
 </div>
 
 
@@ -64,8 +64,27 @@
 <div style="font-weight:bold;width:100%;background: rgba(0, 0, 0, 0.5);overflow: hidden;bottom:0px;position: fixed;color:white">
 <img style="font-weight:bold;height:auto;width:60px;vertical-align: middle;" src="img/img8.png">
 下载一句APP探索更多
-<a style="text-decoration:none;font-weight:bold;color:#55AAFF" href="https://www.coolapk.com/apk/small.word">点击下载</a>
+<a onclick="down()" style="text-decoration:none;font-weight:bold;color:#55AAFF" href="YiJu_APP.apk" download="一句APP.apk">点击下载</a>
 </div>
 
+
+<script src="jquery.js"></script>
+<script>
+function getParam(paramName) { 
+    paramValue = "", isFound = !1; 
+    if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) { 
+        arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0; 
+        while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
+    } 
+    return paramValue == "" && (paramValue = null), paramValue 
+} 
+function down(){
+var p = getParam('i');
+if(p.length == 6){
+var url  = 'http://yijuzhan.com/u/t/?i=' + p;
+$.get(url, null);
+}
+}
+</script>
 </body>
 </html>
